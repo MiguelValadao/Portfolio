@@ -1,0 +1,44 @@
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 3px;
+  gap: 0;
+}
+
+.lang-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 99px;
+  color: var(--text-dim);
+  transition: color var(--transition);
+  z-index: 0;
+}
+
+.lang-btn--active {
+  color: var(--bg);
+}
+
+.lang-btn__indicator {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  border-radius: 99px;
+  z-index: -1;
+}
+
+.lang-btn__label {
+  position: relative;
+  z-index: 1;
+}
+
+.lang-btn:not(.lang-btn--active):hover {
+  color: var(--accent);
+}

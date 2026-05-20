@@ -1,0 +1,100 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.25rem 0;
+  transition: background var(--transition), box-shadow var(--transition),
+    padding var(--transition);
+}
+
+.navbar--scrolled {
+  background: rgba(10, 14, 23, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--border);
+  padding: 0.85rem 0;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar__logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e6f1ff;
+  letter-spacing: -0.02em;
+  transition: color var(--transition);
+}
+.navbar__logo:hover { color: var(--accent); }
+.navbar__logo-bracket { color: var(--accent); }
+.navbar__logo-text { color: #e6f1ff; padding: 0 2px; }
+
+/* Links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar__link {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.navbar__link:hover,
+.navbar__link--active { color: var(--accent); }
+.navbar__link-num { font-size: 0.7rem; }
+
+.navbar__resume { padding: 0.5rem 1.1rem; font-size: 0.75rem; }
+
+/* Burger */
+.navbar__burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+/* Drawer */
+.navbar__drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(75vw, 320px);
+  background: var(--bg-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 200;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.4);
+}
+
+.navbar__drawer-link {
+  font-size: 1.1rem;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color var(--transition);
+}
+.navbar__drawer-link:hover { color: var(--accent); }
+
+@media (max-width: 700px) {
+  .navbar__links { display: none; }
+  .navbar__burger { display: block; }
+}

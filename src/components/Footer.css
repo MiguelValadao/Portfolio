@@ -1,0 +1,35 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer__copy {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.footer__name { color: var(--accent); }
+
+.footer__socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer__social-link {
+  color: var(--text-dim);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.footer__social-link:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}

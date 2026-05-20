@@ -1,0 +1,108 @@
+.about { padding: 6rem 0; }
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Text */
+.about__text { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.about__text p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Skills */
+.about__skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.about__skill-heading {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.about__skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+
+.about__skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.about__skill-arrow { color: var(--accent); font-size: 0.65rem; }
+
+/* Avatar */
+.about__avatar-wrap { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.about__avatar-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.about__avatar-img { display: block; width: 100%; aspect-ratio: 1; }
+.about__avatar-img svg { width: 100%; height: 100%; }
+
+.about__avatar-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(100,255,218,0.04), rgba(167,139,250,0.04));
+  pointer-events: none;
+}
+
+/* Stats */
+.about__stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.about__stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.about__stat-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.about__stat-label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about__avatar-wrap { max-width: 320px; }
+}
+
+@media (max-width: 500px) {
+  .about__skills { grid-template-columns: 1fr; }
+}
