@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDownRight, Code, Link2, Share2 } from "lucide-react";
-import { useTranslation} from "react-i18next";
 import { socialLinks } from "../data/portfolioData";
 import FloatingPhoto from "./FloatingPhoto";
 import "./Hero.css";
@@ -22,7 +21,6 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function Hero() {
-  const { t } = useTranslation();
   const [photoVisible, setPhotoVisible] = useState(false);
 
   return (
