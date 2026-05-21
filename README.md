@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Meu Portfólio - React + Vite + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e contato. Construído com foco em performance, tipagem estática e uma experiência de desenvolvimento ágil usando Vite.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 18** com componentes funcionais e hooks
+- **TypeScript** para tipagem estática e maior robustez
+- **Vite** como bundler e servidor de desenvolvimento extremamente rápido
+- **CSS Modules / Styled Components** (ajuste conforme sua escolha)
+- **ESLint + Prettier** para padronização de código
 
-## React Compiler
+## ✨ Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Layout responsivo (mobile-first)
+- Galeria de projetos com links para repositórios e demonstrações
+- Seção de habilidades técnicas
+- Formulário de contato (opcional – integre com Formspree/EmailJS)
+- Otimização de imagens e assets estáticos
+- Deploy automatizado na Vercel
 
-## Expanding the ESLint configuration
+## 📦 Como executar localmente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Pré‑requisitos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (versão 18 ou superior)
+- npm ou yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Passos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash```
+Clone o repositório
+git clone https://github.com/seu-usuario/seu-portfolio.git
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse a pasta
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+cd seu-portfolio
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Instale as dependências
+
+```npm install```
+
+ou
+ 
+```yarn install```
+
+Execute em modo de desenvolvimento
+```npm run dev```
+
+ou
+
+```yarn dev```
+
+O projeto estará disponível em http://localhost:5173 (porta padrão do Vite).
+
+# 🛠️ Scripts disponíveis
+Comando	Ação
+```npm run dev``` -	Inicia o servidor de desenvolvimento
+
+```npm run build``` -	Gera a versão de produção na pasta dist
+
+```npm run preview``` -	Pré-visualiza a build localmente
+
+```npm run lint``` - Executa o ESLint para verificar o código
