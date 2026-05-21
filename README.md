@@ -29,14 +29,27 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e con
 ### Passos
 
 ```bash```
+---
+
 Clone o repositório
-git clone https://github.com/seu-usuario/seu-portfolio.git
+
+---
+
+```https://github.com/MiguelValadao/Portfolio.git```
+
+---
 
 Acesse a pasta
 
+---
+
 cd seu-portfolio
 
+---
+
 Instale as dependências
+
+---
 
 ```npm install```
 
@@ -44,17 +57,26 @@ ou
  
 ```yarn install```
 
+---
+
 Execute em modo de desenvolvimento
+
+---
 ```npm run dev```
 
 ou
 
 ```yarn dev```
 
+---
+
 O projeto estará disponível em http://localhost:5173 (porta padrão do Vite).
 
+---
+
 # 🛠️ Scripts disponíveis
-Comando	Ação
+Comando // Ação
+
 ```npm run dev``` -	Inicia o servidor de desenvolvimento
 
 ```npm run build``` -	Gera a versão de produção na pasta dist
