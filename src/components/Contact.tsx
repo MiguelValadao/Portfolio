@@ -60,6 +60,7 @@ export default function Contact() {
             <form
               className="contact__form"
               onSubmit={(e) => e.preventDefault()}
+              action="https://formsubmit.co/migueltvaladao@gmail.com" method= "POST"
             >
               <div className="contact__form-row">
                 <div className="contact__field">
