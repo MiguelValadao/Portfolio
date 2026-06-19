@@ -4,10 +4,6 @@ import "./FloatingPhoto.css";
 
 interface FloatingPhotoProps {
   visible: boolean;
-  /**
-   * Swap this for your real photo path once ready, e.g. "/images/photo.jpg"
-   * Leave undefined to show the SVG placeholder.
-   */
   src?: string;
   alt?: string;
 }
@@ -98,7 +94,6 @@ export default function FloatingPhoto({
                 fill="rgba(100,255,218,0.45)"
                 letterSpacing="2"
               >
-                YOUR PHOTO HERE
               </text>
             </svg>
           )}
