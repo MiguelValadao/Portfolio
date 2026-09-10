@@ -59,26 +59,26 @@ export default function Contact() {
           >
             <form
               className="contact__form"
-              onSubmit={(e) => e.preventDefault()}
-              action="https://formsubmit.co/migueltvaladao@gmail.com" method= "POST"
+              action="https://formsubmit.co/migueltvaladao@gmail.com"
+              method="POST"
             >
               <div className="contact__form-row">
                 <div className="contact__field">
                   <label htmlFor="name" className="contact__label mono">Name</label>
-                  <input id="name" type="text" className="contact__input" placeholder="Your name" />
+                  <input id="name" type="text" name="name" className="contact__input" placeholder="Your name" />
                 </div>
                 <div className="contact__field">
                   <label htmlFor="email" className="contact__label mono">Email</label>
-                  <input id="email" type="email" className="contact__input" placeholder="your@email.com" />
+                  <input id="email" type="email" name="email" className="contact__input" placeholder="your@email.com" />
                 </div>
               </div>
               <div className="contact__field">
                 <label htmlFor="subject" className="contact__label mono">Subject</label>
-                <input id="subject" type="text" className="contact__input" placeholder="What's this about?" />
+                <input id="subject" type="text" name="subject" className="contact__input" placeholder="What's this about?" />
               </div>
               <div className="contact__field">
                 <label htmlFor="message" className="contact__label mono">Message</label>
-                <textarea id="message" className="contact__textarea" rows={5} placeholder="Your message..." />
+                <textarea id="message" name="message" className="contact__textarea" rows={5} placeholder="Your message..." />
               </div>
               <button type="submit" className="btn contact__submit">
                 Send Message <Send size={14} />

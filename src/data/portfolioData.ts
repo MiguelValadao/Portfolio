@@ -9,6 +9,20 @@ export const navLinks: NavLink[] = [
 
 export const experiences: Experience[] = [
   {
+    id: "exp-2",
+    role: "Full Stack Developer & Co-Founder",
+    company: "Marco Um",
+    period: "Sep 2026 – Present",
+    description: [
+      " Developed digital solutions tailored to companies' business needs.",
+      "Collaborated with clients and internal teams to gather requirements and deliver solutions aligned with client expectations",
+      "Assisted in developing and maintaining the backend of the company's main application.",
+      "Utilized Google developer and marketing tools to create digital campaigns and deploy websites.",
+    ],
+    
+    tech: ["React", "TypeScript", "Node.js", "FastAPI", "Python", "Docker", "AWS", "Java"],
+  },
+  {
     id: "exp-1",
     role: "Support Analyst",
     company: "Versa Informatica",
@@ -30,7 +44,7 @@ export const experiences: Experience[] = [
   //     "Implemented real-time dashboard with WebSockets, improving user engagement by 35%.",
   //     "Collaborated closely with designers to deliver pixel-perfect, accessible UIs.",
   //   ],
-  //   tech: ["React", "TypeScript", "GraphQL", "Styled Components", "Storybook"],
+  //   tech: [],
   // },
   // {
   //   id: "exp-3",
@@ -85,6 +99,15 @@ export const projects: Project[] = [
       "Simple chess game built purely with JS and HTML.",
     tech: ["Javascript", "HTML", "CSS"],
     github: "https://github.com/MiguelValadao/Chess",
+    featured: false,
+  },
+    {
+    id: "proj-5",
+    title: "Shelf",
+    description:
+      "AI powered library management system that allows users to manage their book collections, track reading progress, and receive personalized book recommendations based on their reading habits and preferences.",
+    tech: ["Flutter", "Python", "FastAPI", "Dart", "Supabase"],
+    github: "https://github.com/MiguelValadao/Shelf",
     featured: false,
   },
   // {

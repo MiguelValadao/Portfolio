@@ -60,7 +60,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.h2 className="hero__tagline" variants={item}>
-            I build things for cellphones and backend apps.
+            I build stuff for cellphones and backend apps.
           </motion.h2>
 
           <motion.p className="hero__description" variants={item}>
