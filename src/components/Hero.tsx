@@ -25,17 +25,11 @@ export default function Hero() {
 
   return (
     <section className="hero" id="hero">
-      {/* Background grid */}
-      <div className="hero__grid" aria-hidden />
 
       <FloatingPhoto
         visible={photoVisible}
         src="/images/MyPhoto.jpg"
       />
-
-      {/* Ambient glows */}
-      <div className="hero__glow hero__glow--1" aria-hidden />
-      <div className="hero__glow hero__glow--2" aria-hidden />
 
       <div className="container hero__content">
         <motion.div

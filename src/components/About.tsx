@@ -37,13 +37,11 @@ export default function About() {
             </p>
             <p>
               My journey started with a curiosity about how web pages work —
-              within a few years that curiosity had grown into a career building
-              products used by millions. I care deeply about clean code,
-              accessibility, and the craft of engineering.
+              within a few years that curiosity shifted into a passion for building useful full-stack applications for both mobile and web.
             </p>
             <p>
-              When I'm not pushing code, you'll find me hiking, reading sci-fi,
-              or experimenting with generative art.
+              When I'm not pushing code, you'll find me reading philosophy, classics,
+              or playing my humble guitar.
             </p>
 
             {/* Skills grid */}
@@ -75,10 +73,10 @@ export default function About() {
             {/* Stats */}
             <div className="about__stats">
               {[
-                { val: "1", label: "Years exp." },
+                { val: "+2", label: "Years exp." },
                 { val: "+5", label: "Projects" },
                 { val: "3", label: "Languages spoken" },
-                { val: "100%", label: "Coffee consumed" },
+                { val: "99.9%", label: "Understandable variables" },
                 { val: "+3", label: "Years of coding" },
               ].map((s) => (
                 <div key={s.label} className="about__stat">

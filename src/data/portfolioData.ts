@@ -68,7 +68,7 @@ export const projects: Project[] = [
     tech: ["Python", "TkInter", "Bootstrap"],
     github: "https://github.com/MiguelValadao/ReminderApp",
     live: "https://github.com/MiguelValadao/ReminderApp",
-    featured: true,
+    featured: false,
     image: "/images/reminderApp.png",
   },
   {
@@ -91,6 +91,16 @@ export const projects: Project[] = [
     github: "https://github.com/MiguelValadao",
     featured: true,
     image: "/images/catas.png",
+  },
+  {
+    id: "proj-4",
+    title: "Koda-AI",
+    description:
+      "Koda is an AI-powered business management platform designed to simplify complex ERP systems by combining customer relationship management (CRM), financial tracking, revenue forecasting, inventory control, and task management in one place.With WhatsApp integration and a conversational AI assistant, Koda automates repetitive tasks, provides personalized insights, and helps businesses make better decisions. Its AI uses company-specific data and processes to answer questions, explain recommendations, and identify opportunities for improvement. The platform also features Kanban-based task management and workflow organization, helping businesses reduce errors, save time, and focus on what matters most. ",
+    tech: ["Next.js", "TypeScript", "FastAPI", "React", "Prisma", "Docker"],
+    github: "https://github.com/marcoum",
+    featured: true,
+    image: "/images/koda.png",
   },
   {
     id: "proj-4",
