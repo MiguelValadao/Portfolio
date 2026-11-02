@@ -1,10 +1,13 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { experiences } from "../data/portfolioData";
+import { useTranslation } from "react-i18next";
+import { getExperiences } from "../data/portfolioData";
 import type { Experience } from "../types";
 import "./Experience.css";
 
 export default function Experience() {
+  const { t } = useTranslation();
+  const experiences = getExperiences(t);
   const [active, setActive] = useState<string>(experiences[0].id);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -20,8 +23,8 @@ export default function Experience() {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <p className="section-label">02. experience</p>
-          <h2 className="section-title">Where I've Worked</h2>
+          <p className="section-label">{t("experience.label")}</p>
+          <h2 className="section-title">{t("experience.title")}</h2>
         </motion.div>
 
         <motion.div

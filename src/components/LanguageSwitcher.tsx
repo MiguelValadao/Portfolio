@@ -8,22 +8,20 @@ const LANGUAGES = [
 ];
 
 export default function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const current = i18n.language?.slice(0, 2) ?? "en";
 
-  const toggle = () => {
-    const next = current === "en" ? "pt" : "en";
-    i18n.changeLanguage(next);
-  };
-
   return (
-    <div className="lang-switcher" role="group" aria-label="Language switcher">
+    <div className="lang-switcher" role="group" aria-label={t("language.switcher")}>
       {LANGUAGES.map((lang) => (
         <button
           key={lang.code}
           className={`lang-btn mono${current === lang.code ? " lang-btn--active" : ""}`}
-          onClick={toggle}
+          onClick={() => i18n.changeLanguage(lang.code)}
           aria-pressed={current === lang.code}
+          aria-label={t("language.switchTo", {
+            language: lang.code === "en" ? t("language.english") : t("language.portuguese"),
+          })}
         >
           {current === lang.code && (
             <motion.span

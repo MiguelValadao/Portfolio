@@ -1,163 +1,78 @@
-import type { NavLink, Experience, Project, Skill, SocialLink } from "../types";
+import type { TFunction } from "i18next";
+import type { Experience, NavLink, Project, SocialLink } from "../types";
 
-export const navLinks: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+export const getNavLinks = (t: TFunction): NavLink[] => [
+  { label: t("nav.about"), href: "#about" },
+  { label: t("nav.experience"), href: "#experience" },
+  { label: t("nav.projects"), href: "#projects" },
+  { label: t("nav.contact"), href: "#contact" },
 ];
 
-export const experiences: Experience[] = [
+export const getExperiences = (t: TFunction): Experience[] => [
   {
     id: "exp-2",
-    role: "Full Stack Developer & Co-Founder",
+    role: t("experience.marcoUm.role"),
     company: "Marco Um",
-    period: "Sep 2026 – Present",
-    description: [
-      " Developed digital solutions tailored to companies' business needs.",
-      "Collaborated with clients and internal teams to gather requirements and deliver solutions aligned with client expectations",
-      "Assisted in developing and maintaining the backend of the company's main application.",
-      "Utilized Google developer and marketing tools to create digital campaigns and deploy websites.",
-    ],
-    
+    period: t("experience.marcoUm.period"),
+    description: t("experience.marcoUm.description", { returnObjects: true }) as string[],
     tech: ["React", "TypeScript", "Node.js", "FastAPI", "Python", "Docker", "AWS", "Java"],
   },
   {
     id: "exp-1",
-    role: "Support Analyst",
+    role: t("experience.versa.role"),
     company: "Versa Informatica",
-    period: "Apr 2025 – Dec 2025",
-    description: [
-      "Identified, registered and solved 100+ technical issues in the system's enviroment",
-      "Communication with clients to understand their needs and provide effective solutions, resulting in a 95% satisfaction rate.",
-      "Technical support for clients and internal teams",
-    ],
+    period: t("experience.versa.period"),
+    description: t("experience.versa.description", { returnObjects: true }) as string[],
     tech: [],
   },
-  // {
-  //   id: "exp-2",
-  //   role: "Frontend Engineer",
-  //   company: "Startup XYZ",
-  //   period: "Jun 2021 – Dec 2022",
-  //   description: [
-  //     "Built reusable component library adopted across 3 product teams, cutting design-to-dev handoff by 60%.",
-  //     "Implemented real-time dashboard with WebSockets, improving user engagement by 35%.",
-  //     "Collaborated closely with designers to deliver pixel-perfect, accessible UIs.",
-  //   ],
-  //   tech: [],
-  // },
-  // {
-  //   id: "exp-3",
-  //   role: "Software Engineer Intern",
-  //   company: "Tech Labs",
-  //   period: "Jan 2021 – May 2021",
-  //   description: [
-  //     "Developed a data-pipeline tool that automated ETL workflows, saving 10+ hours/week of manual work.",
-  //     "Wrote comprehensive unit tests achieving 90% code coverage on the analytics module.",
-  //   ],
-  //   tech: ["Python", "FastAPI", "React", "SQLite"],
-  // },
 ];
 
-export const projects: Project[] = [
+export const getProjects = (t: TFunction): Project[] => [
   {
-    id: "proj-1",
-    title: "ReminderApp",
-    description:
-      "ReminderApp is a simple, yet effective, user-friendly notification app and task scheduler that uses system native notifications to remind users of important tasks and events. Users can create custom reminders with flexible scheduling options.",
+    id: "proj-1", title: "ReminderApp", description: t("projects.reminderApp"),
     tech: ["Python", "TkInter", "Bootstrap"],
     github: "https://github.com/MiguelValadao/ReminderApp",
     live: "https://github.com/MiguelValadao/ReminderApp",
-    featured: false,
-    image: "/images/reminderApp.png",
+    featured: false, image: "/images/reminderApp.png",
   },
   {
-    id: "proj-2",
-    title: "Terminal Portfolio",
-    description:
-      "A PowerShell-style terminal emulator for browsing my portfolio.",
+    id: "proj-2", title: "Terminal Portfolio", description: t("projects.terminal"),
     tech: ["HTML", "JavaScript", "CSS"],
     github: "https://github.com/MiguelValadao/Terminal",
     live: "https://miguelvaladao.github.io/Terminal/",
-    featured: true,
-    image: "/images/terminal.png",
+    featured: true, image: "/images/terminal.png",
   },
   {
-    id: "proj-3",
-    title: "CATAS",
-    description:
-      "CATAS is a context aware task automation system that uses user input as workflow triggers. It integrates with various APIs and services to automate tasks like sending emails, managing calendars, and controlling applications based on user-defined rules and contexts. (Not yet complete)",
+    id: "proj-3", title: "CATAS", description: t("projects.catas"),
     tech: ["Flutter", "Python", "FastAPI", "Dart", "Supabase", "N8N"],
-    github: "https://github.com/MiguelValadao",
-    featured: true,
-    image: "/images/catas.png",
+    github: "https://github.com/MiguelValadao", featured: true, image: "/images/catas.png",
   },
   {
-    id: "proj-4",
-    title: "Koda-AI",
-    description:
-      "Koda is an AI-powered business management platform designed to simplify complex ERP systems by combining customer relationship management (CRM), financial tracking, revenue forecasting, inventory control, and task management in one place.With WhatsApp integration and a conversational AI assistant, Koda automates repetitive tasks, provides personalized insights, and helps businesses make better decisions. Its AI uses company-specific data and processes to answer questions, explain recommendations, and identify opportunities for improvement. The platform also features Kanban-based task management and workflow organization, helping businesses reduce errors, save time, and focus on what matters most. ",
+    id: "proj-4", title: "Koda-AI", description: t("projects.koda"),
     tech: ["Next.js", "TypeScript", "FastAPI", "React", "Prisma", "Docker"],
-    github: "https://github.com/marcoum",
-    featured: true,
-    image: "/images/koda.png",
+    github: "https://github.com/marcoum", featured: true, image: "/images/koda.png",
   },
   {
-    id: "proj-4",
-    title: "Chess",
-    description:
-      "Simple chess game built purely with JS and HTML.",
-    tech: ["Javascript", "HTML", "CSS"],
-    github: "https://github.com/MiguelValadao/Chess",
-    featured: false,
+    id: "proj-5", title: "Chess", description: t("projects.chess"),
+    tech: ["JavaScript", "HTML", "CSS"], github: "https://github.com/MiguelValadao/Chess", featured: false,
   },
-    {
-    id: "proj-5",
-    title: "Shelf",
-    description:
-      "AI powered library management system that allows users to manage their book collections, track reading progress, and receive personalized book recommendations based on their reading habits and preferences.",
+  {
+    id: "proj-6", title: "Shelf", description: t("projects.shelf"),
     tech: ["Flutter", "Python", "FastAPI", "Dart", "Supabase"],
-    github: "https://github.com/MiguelValadao/Shelf",
-    featured: false,
+    github: "https://github.com/MiguelValadao/Shelf", featured: false,
   },
-  // {
-  //   id: "proj-5",
-  //   title: "Pulse — API Health Monitor",
-  //   description:
-  //     "Lightweight self-hosted uptime monitor with Slack/email alerts, status pages, and response-time analytics.",
-  //   tech: ["Go", "SQLite", "React", "Docker"],
-  //   github: "https://github.com",
-  //   featured: false,
-  // },
-  // {
-  //   id: "proj-6",
-  //   title: "Chromatic — Theme Studio",
-  //   description:
-  //     "In-browser design-token editor that exports to CSS variables, Tailwind config, or JSON. Live preview with a component sandbox.",
-  //   tech: ["Vue 3", "TypeScript", "Vite"],
-  //   github: "https://github.com",
-  //   live: "https://example.com",
-  //   featured: false,
-  // },
+  {
+    id: "proj-7", title: "GesturePilot", description: t("projects.gesturePilot"),
+    tech: ["Python", "OpenCV", "MediaPipe", "PyAutoGUI"],
+    github: "https://github.com/MiguelValadao/GesturePilot", featured: false,
+  },
 ];
 
-export const skills: Skill[] = [
-  {
-    category: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "Java", "SQL", "C#", "Dart"],
-  },
-  {
-    category: "Frontend",
-    items: ["React", "Tailwind CSS", "Flutter", "HTML/CSS"],
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "FastAPI", "Flask", "Docker", "Java/Spring Boot"],
-  },
-  {
-    category: "Infrastructure",
-    items: ["Docker", "AWS", "PostgreSQL"],
-  },
+export const skillGroups = [
+  { categoryKey: "about.skills.stack", items: ["TypeScript", "JavaScript", "Python", "Java", "SQL", "C#", "Dart"] },
+  { categoryKey: "about.skills.frontend", items: ["React", "Tailwind CSS", "Flutter", "HTML/CSS"] },
+  { categoryKey: "about.skills.backend", items: ["Node.js", "FastAPI", "Flask", "Docker", "Java/Spring Boot"] },
+  { categoryKey: "about.skills.infrastructure", items: ["Docker", "AWS", "PostgreSQL"] },
 ];
 
 export const socialLinks: SocialLink[] = [

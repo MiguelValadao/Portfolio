@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDownRight, Code, Link2, Share2 } from "lucide-react";
 import { socialLinks } from "../data/portfolioData";
+import { useTranslation } from "react-i18next";
 import FloatingPhoto from "./FloatingPhoto";
 import "./Hero.css";
 const container = {
@@ -21,6 +22,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [photoVisible, setPhotoVisible] = useState(false);
 
   return (
@@ -39,7 +41,7 @@ export default function Hero() {
           animate="show"
         >
           <motion.p className="hero__greeting mono" variants={item}>
-            Hi, my name is
+            {t("hero.greeting")}
           </motion.p>
 
           {/* Hoverable name — triggers the floating photo */}
@@ -54,22 +56,21 @@ export default function Hero() {
           </motion.h1>
 
           <motion.h2 className="hero__tagline" variants={item}>
-            I build stuff for cellphones and backend apps.
+            {t("hero.tagline")}
           </motion.h2>
 
           <motion.p className="hero__description" variants={item}>
-            I'm a full-stack developer specialising in crafting exceptional
-            digital experiences. Currently focused on building{" "}
-            <span className="hero__highlight">accessible && performant</span>{" "}
-            products at the intersection of design and engineering.
+            {t("hero.descriptionBefore")} {" "}
+            <span className="hero__highlight">{t("hero.highlight")}</span>{" "}
+            {t("hero.descriptionAfter")}
           </motion.p>
 
           <motion.div className="hero__actions" variants={item}>
             <a href="#projects" className="btn hero__btn-primary">
-              View my work <ArrowDownRight size={16} />
+              {t("hero.viewWork")} <ArrowDownRight size={16} />
             </a>
             <a href="#contact" className="btn hero__btn-ghost">
-              Get in touch
+              {t("hero.getInTouch")}
             </a>
           </motion.div>
         </motion.div>

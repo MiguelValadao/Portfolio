@@ -1,13 +1,15 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Code, ExternalLink, Folder } from "lucide-react";
-import { projects } from "../data/portfolioData";
+import { useTranslation } from "react-i18next";
+import { getProjects } from "../data/portfolioData";
 import "./Projects.css";
 
-const featured = projects.filter((p) => p.featured);
-const others = projects.filter((p) => !p.featured);
-
 export default function Projects() {
+  const { t } = useTranslation();
+  const projects = getProjects(t);
+  const featured = projects.filter((project) => project.featured);
+  const others = projects.filter((project) => !project.featured);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -20,8 +22,8 @@ export default function Projects() {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <p className="section-label">03. projects</p>
-          <h2 className="section-title">Things I've Built</h2>
+          <p className="section-label">{t("projects.label")}</p>
+          <h2 className="section-title">{t("projects.title")}</h2>
         </motion.div>
 
         {/* Featured projects */}
@@ -89,7 +91,7 @@ export default function Projects() {
                 {/* Info */}
                 <div className="projects__featured-info">
                   <p className="projects__featured-label mono">
-                    Featured Project
+                    {t("projects.featured")}
                   </p>
                   <h3 className="projects__featured-title">{proj.title}</h3>
                   <div className="projects__featured-desc">
@@ -118,7 +120,7 @@ export default function Projects() {
                         href={proj.live}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label="Live site"
+                        aria-label={t("projects.liveSite")}
                       >
                         <ExternalLink size={20} />
                       </a>
@@ -137,7 +139,7 @@ export default function Projects() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Other Noteworthy Projects
+          {t("projects.other")}
         </motion.h3>
 
         <div className="projects__grid">
@@ -167,7 +169,7 @@ export default function Projects() {
                       href={proj.live}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="Live site"
+                      aria-label={t("projects.liveSite")}
                     >
                       <ExternalLink size={18} />
                     </a>

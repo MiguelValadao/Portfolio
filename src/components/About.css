@@ -19,7 +19,7 @@
 /* Skills */
 .about__skills {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -103,6 +103,6 @@
   .about__avatar-wrap { max-width: 320px; }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 320px) {
   .about__skills { grid-template-columns: 1fr; }
 }

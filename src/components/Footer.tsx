@@ -1,5 +1,6 @@
 import { Code, Link2, Share2 } from "lucide-react";
 import { socialLinks } from "../data/portfolioData";
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -9,11 +10,12 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="footer__inner container">
         <p className="footer__copy mono">
-          Designed &amp; Built by{" "}
+          {t("footer.copy")}{" "}
           <span className="footer__name">Miguel Teixeira</span>
         </p>
         <div className="footer__socials">

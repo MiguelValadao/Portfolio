@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "../data/portfolioData";
+import { useTranslation } from "react-i18next";
+import { getNavLinks } from "../data/portfolioData";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { useActiveSection } from "../hooks/useActiveSection";
 import type { NavLink } from "../types";
 import "./Navbar.css";
@@ -9,9 +11,11 @@ import "./Navbar.css";
 const SECTION_IDS = ["about", "experience", "projects", "contact"];
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const activeSection = useActiveSection(SECTION_IDS);
+  const navLinks = getNavLinks(t);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -55,15 +59,16 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
           >
-            My Resume
+            {t("nav.resume")}
           </a>
+          <LanguageSwitcher />
         </nav>
 
         {/* Mobile burger */}
         <button
           className="navbar__burger"
           onClick={() => setMenuOpen((o) => !o)}
-          aria-label="Toggle menu"
+          aria-label={t("nav.toggleMenu")}
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -93,8 +98,9 @@ export default function Navbar() {
               </a>
             ))}
             <a href="/My_Resume.pdf" className="btn" target="_blank" rel="noreferrer">
-              My Resume
+              {t("nav.resume")}
             </a>
+            <LanguageSwitcher />
           </motion.div>
         )}
       </AnimatePresence>
