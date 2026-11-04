@@ -36,6 +36,7 @@ const pt = {
     label: "03. projetos", title: "O que construí", featured: "Projeto em destaque", other: "Outros projetos relevantes", liveSite: "Site ao vivo",
     reminderApp: "ReminderApp é um aplicativo simples e eficaz de notificações e agendamento de tarefas. Ele usa as notificações nativas do sistema para lembrar tarefas e eventos importantes, com lembretes personalizados e opções flexíveis de agendamento.",
     terminal: "Um emulador de terminal no estilo PowerShell para navegar pelo meu portfólio.",
+    mobilibus: "Mobilibus é um aplicativo móvel que fornece informações em tempo real sobre o transporte público em Belo Horizonte, Brasil. Ele permite que os usuários acompanhem a localização dos ônibus, visualizem horários e recebam notificações sobre atrasos ou alterações no serviço.",
     catas: "CATAS é um sistema de automação de tarefas sensível ao contexto que usa a entrada do usuário como gatilho de fluxos de trabalho. Ele integra APIs e serviços para automatizar tarefas como enviar e-mails, gerenciar calendários e controlar aplicações a partir de regras e contextos definidos pelo usuário. (Em desenvolvimento)",
     koda: "Koda é uma plataforma de gestão empresarial com IA que simplifica sistemas ERP complexos. Ela reúne CRM, controle financeiro, previsão de receita, estoque e gerenciamento de tarefas em um só lugar. Com integração ao WhatsApp e um assistente de IA conversacional, automatiza tarefas repetitivas e oferece insights personalizados.",
     chess: "Um jogo de xadrez simples construído somente com JavaScript e HTML.",

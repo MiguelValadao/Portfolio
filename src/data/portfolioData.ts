@@ -44,27 +44,33 @@ export const getProjects = (t: TFunction): Project[] => [
   },
   {
     id: "proj-3", title: "CATAS", description: t("projects.catas"),
-    tech: ["Flutter", "Python", "FastAPI", "Dart", "Supabase", "N8N"],
+    tech: ["Flutter", "Python", "FastAPI", "Dart", "Supabase"],
     github: "https://github.com/MiguelValadao", featured: true, image: "/images/catas.png",
   },
   {
-    id: "proj-4", title: "Koda-AI", description: t("projects.koda"),
+    id: "proj-4", title: "Mobilibus", description: t("projects.mobilibus"),
+    tech: ["Flutter", "Dart", "Geolocator"],
+    github: "https://github.com/MiguelValadao/Mobilibus", featured: true, image: "/images/MobiliBus.png",
+  },
+  {
+    id: "proj-5", title: "Koda-AI", description: t("projects.koda"),
     tech: ["Next.js", "TypeScript", "FastAPI", "React", "Prisma", "Docker"],
     github: "https://github.com/marcoum", featured: true, image: "/images/koda.png",
   },
   {
-    id: "proj-5", title: "Chess", description: t("projects.chess"),
-    tech: ["JavaScript", "HTML", "CSS"], github: "https://github.com/MiguelValadao/Chess", featured: false,
+    id: "proj-6", title: "GesturePilot", description: t("projects.gesturePilot"),
+    tech: ["Python", "OpenCV", "MediaPipe", "PyAutoGUI"],
+    github: "https://github.com/MiguelValadao/GesturePilot", featured: false,
   },
   {
-    id: "proj-6", title: "Shelf", description: t("projects.shelf"),
+    id: "proj-7", title: "Shelf", description: t("projects.shelf"),
     tech: ["Flutter", "Python", "FastAPI", "Dart", "Supabase"],
     github: "https://github.com/MiguelValadao/Shelf", featured: false,
   },
+  
   {
-    id: "proj-7", title: "GesturePilot", description: t("projects.gesturePilot"),
-    tech: ["Python", "OpenCV", "MediaPipe", "PyAutoGUI"],
-    github: "https://github.com/MiguelValadao/GesturePilot", featured: false,
+    id: "proj-8", title: "Chess", description: t("projects.chess"),
+    tech: ["JavaScript", "HTML", "CSS"], github: "https://github.com/MiguelValadao/Chess", featured: false,
   },
 ];
 
