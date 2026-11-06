@@ -48,9 +48,9 @@ export const getProjects = (t: TFunction): Project[] => [
     github: "https://github.com/MiguelValadao", featured: true, image: "/images/catas.png",
   },
   {
-    id: "proj-4", title: "Mobilibus", description: t("projects.mobilibus"),
+    id: "proj-4", title: "E o Balaio?", description: t("projects.balaio"),
     tech: ["Flutter", "Dart", "Geolocator"],
-    github: "https://github.com/MiguelValadao/Mobilibus", featured: true, image: "/images/MobiliBus.png",
+    github: "https://github.com/MiguelValadao/Mobilibus", featured: true, image: "/images/balaio.png",
   },
   {
     id: "proj-5", title: "Koda-AI", description: t("projects.koda"),

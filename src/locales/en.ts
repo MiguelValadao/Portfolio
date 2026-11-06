@@ -36,7 +36,7 @@ const en = {
     label: "03. projects", title: "Things I've Built", featured: "Featured project", other: "Other noteworthy projects", liveSite: "Live site",
     reminderApp: "ReminderApp is a simple, effective notification app and task scheduler that uses native system notifications to remind users of important tasks and events. Users can create custom reminders with flexible scheduling options.",
     terminal: "A PowerShell-style terminal emulator for browsing my portfolio.",
-    mobilibus: "Mobilibus is a mobile application that provides real-time information about public transportation in Belo Horizonte, Brazil. It allows users to track bus locations, view schedules, and receive notifications about delays or changes in service.",
+    balaio: "'E o Balaio?' is a mobile application that provides real-time information about public transportation in Belo Horizonte, Brazil. It allows users to track bus locations, view schedules, and receive notifications about delays or changes in service.",
     catas: "CATAS is a context-aware task automation system that uses user input as workflow triggers. It integrates with APIs and services to automate tasks such as sending emails, managing calendars, and controlling applications from user-defined rules and contexts. (In progress)",
     koda: "Koda is an AI-powered business management platform that simplifies complex ERP systems. It combines CRM, financial tracking, revenue forecasting, inventory control, and task management in one place. With WhatsApp integration and a conversational AI assistant, it automates repetitive tasks and surfaces personalised insights.",
     chess: "A simple chess game built purely with JavaScript and HTML.",
