@@ -3,10 +3,20 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1100;
   padding: 1.25rem 0;
   transition: background var(--transition), box-shadow var(--transition),
     padding var(--transition);
+}
+
+/* These root-level layers override the generic root child stacking rule. */
+#root > .navbar { z-index: 1100; }
+
+.navbar__menu-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  pointer-events: none;
 }
 
 .navbar--scrolled {
@@ -67,6 +77,16 @@
 }
 
 /* Drawer */
+.navbar__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  border: 0;
+  background: rgba(10, 14, 23, 0.5);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
 .navbar__drawer {
   position: fixed;
   top: 0;
@@ -79,8 +99,9 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  z-index: 200;
+  z-index: 1050;
   box-shadow: -10px 0 40px rgba(0,0,0,0.4);
+  pointer-events: auto;
 }
 
 .navbar__drawer-link {

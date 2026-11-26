@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -23,13 +24,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen]);
+
   return (
-    <motion.header
-      className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <>
+      <motion.header
+        className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
       <div className="navbar__inner container">
         {/* Logo */}
         <a href="#" className="navbar__logo">
@@ -69,41 +87,61 @@ export default function Navbar() {
           className="navbar__burger"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label={t("nav.toggleMenu")}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className="navbar__drawer"
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3 }}
-          >
-            {navLinks.map((link: NavLink, i: number) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="navbar__drawer-link"
+      </motion.header>
+
+      {/* Render outside the animated header so it cannot be trapped in its stacking context. */}
+      {createPortal(
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div className="navbar__menu-layer">
+              <motion.button
+                type="button"
+                className="navbar__backdrop"
+                aria-label="Close navigation menu"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onClick={() => setMenuOpen(false)}
+              />
+              <motion.nav
+                id="mobile-navigation"
+                className="navbar__drawer"
+                aria-label="Mobile navigation"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.3 }}
               >
-                <span className="mono" style={{ color: "var(--accent)", fontSize: "0.75rem" }}>
-                  0{i + 1}.
-                </span>
-                {link.label}
-              </a>
-            ))}
-            <a href="/My_Resume.pdf" className="btn" target="_blank" rel="noreferrer">
-              {t("nav.resume")}
-            </a>
-            <LanguageSwitcher />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+                {navLinks.map((link: NavLink, i: number) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="navbar__drawer-link"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span className="mono" style={{ color: "var(--accent)", fontSize: "0.75rem" }}>
+                      0{i + 1}.
+                    </span>
+                    {link.label}
+                  </a>
+                ))}
+                <a href="/My_Resume.pdf" className="btn" target="_blank" rel="noreferrer">
+                  {t("nav.resume")}
+                </a>
+                <LanguageSwitcher />
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.getElementById("root") ?? document.body,
+      )}
+    </>
   );
 }
